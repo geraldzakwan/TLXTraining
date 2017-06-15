@@ -1,0 +1,9 @@
+b
+d
+b
+b (BENER)
+a
+a
+b (O(NM))
+c (BENER)
+c (BENER)
