@@ -13,6 +13,8 @@ list<string> insert_name_ordered(list<string> ls, string name) {
       }
     }
 
+    ls.insert(iterator, name);
+
     // cout << "INSERT - START" << endl;
     // list<string>::const_iterator iterator_2;
     // cout << *iterator << endl;
@@ -42,6 +44,8 @@ int main() {
     cin >> each_name;
     ls = insert_name_ordered(ls, each_name);
   }
+
+  cout << "RESULT : " << endl;
 
   list<string>::const_iterator iterator;
   for (iterator = ls.begin(); iterator != ls.end(); ++iterator) {
