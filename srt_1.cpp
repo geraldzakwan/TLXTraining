@@ -6,26 +6,19 @@ list<string> insert_name_ordered(list<string> ls, string name) {
   if(ls.empty()) {
     ls.push_back(name);
   } else {
-    list<string>::const_iterator iterator;
+    list<string>::iterator iterator;
     for (iterator = ls.begin(); iterator != ls.end(); ++iterator) {
       if((*iterator).length() >= name.length()) {
           break;
       }
     }
 
-    ls.insert(iterator, name);
-
-    // cout << "INSERT - START" << endl;
-    // list<string>::const_iterator iterator_2;
-    // cout << *iterator << endl;
-    // for (iterator_2 = iterator; iterator_2 != ls.end(); ++iterator_2) {
-    //   // cout << *iterator_2 << endl;
-    //   if((*iterator_2) >= name) {
-    //       break;
-    //   }
-    // }
-    //
-    // cout << "INSERT - END" << endl;
+    list<string>::iterator iterator_2;
+    for (iterator_2 = iterator; iterator_2 != ls.end(); ++iterator_2) {
+      if((*iterator_2) >= name || (*iterator_2).length() > name.length()) {
+          break;
+      }
+    }
 
     ls.insert(iterator_2, name);
   }
@@ -44,8 +37,6 @@ int main() {
     cin >> each_name;
     ls = insert_name_ordered(ls, each_name);
   }
-
-  cout << "RESULT : " << endl;
 
   list<string>::const_iterator iterator;
   for (iterator = ls.begin(); iterator != ls.end(); ++iterator) {
