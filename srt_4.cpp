@@ -58,7 +58,11 @@ int main() {
   list<int>::iterator iterator_p = pl.begin();
   while(total_berat < x) {
     if((*iterator_w) <= (x-total_berat)) {
+      total_berat += (*iterator_w);
       total_duit += (*iterator_2) * (float) (*iterator_w);
+    } else {
+      total_duit += (*iterator_2) * (float) (x-total_berat);
+      total_berat = x;
     }
     iterator_2++;
     iterator_w++;
